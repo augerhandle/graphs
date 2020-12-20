@@ -1,0 +1,34 @@
+% !TEX options = -shell-escape -synctex=1 -interaction=nonstopmode -file-line-error "%DOC%"
+
+\documentclass{article}
+
+\usepackage{etoolbox} % for \patchcmd
+
+\usepackage[english]{babel}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+
+\usepackage{tkz-base}
+\usepackage{tkz-fct}
+\usepackage{tkz-euclide}
+\usepackage{xparse}
+\usepackage{etoolbox}
+\usepackage{amsmath}
+
+
+\begin{document}
+
+\section{Base}
+\input{base}
+
+\section{number lines}
+\input{numberlines}
+
+\section{$x$-$y$ grids}
+\input{xy-grids}
+
+\section{functions}
+\input{xy-functions}
+
+ 
+\end{document}
