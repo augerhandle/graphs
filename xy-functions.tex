@@ -1,3 +1,5 @@
+\section{functions}
+
 \begin{tikzpicture}[scale=1.]
     \tkzInit[xmin=-5,xmax=5,ymax=2]
     \tkzGrid
@@ -6,24 +8,79 @@
 \end{tikzpicture}
 
 \begin{tikzpicture}[scale=0.75]
-    \tkzInit[xmin=-5,xmax=5,ymax=5,ymin=-5]
-    \tkzGrid[sub]
-    \tkzAxeXY
+    \tkzInit[
+        xmax=8, xmin=-8, xstep=2,
+        ymax=8, ymin=-8, ystep=2,
+    ]
+    \tkzGrid[sub, subxstep=1, subystep=1]
+    \tkzDrawX[left space=1, right space=1, label={}]
+    \tkzLabelX
+    \tkzDrawY[down space=1, up space=1, label={}]
+    \tkzLabelY
     \tkzFct[color=red]{2*x**2}
     %
     \tkzDefPoint(1,2){A}
     \tkzDrawPoints(A)\tkzLabelPoint[right,red](A){\LARGE$A$}
 \end{tikzpicture}
 
-% \begin{tikzpicture}[scale=1.25]
-%     \tkzInit[xmin=-6,xmax=4,ymin=-5,ymax=6]
-%     \tkzGrid
-%     \tkzAxeXY
-%     \tkzFct[color=red,thick,domain=-6:2.1785]{(-x*x+x+2)*exp(x)}
-%     \tkzSetUpPoint[size=6]
-%     \tkzDrawTangentLine[draw,kl=2](0)
-%     \tkzDefPoint(2,0){b} \tkzDrawPoint(b)
-%     \tkzDefPoint(-1,0){c} \tkzDrawPoint(c)
-%     \tkzText(2,4){($\mathcal{C}$)}
-%     \tkzText(-2,-3){($\mathcal{T}$)}
-% \end{tikzpicture}
+\begin{tikzpicture}[scale=2]
+    \tkzInit[xmin=-3,xmax=3, ymin=-1,ymax=4]
+    \tkzGrid[sub,subxstep=.5,subystep=.5]
+    \tkzAxeXY
+    \tkzFct[domain = -3:2]{(2-x)*exp(x)}
+    \tkzText(-2,1.25){$\mathcal{C}_{f}$}
+    \tkzDefPoint(2,0){A} \tkzDrawPoint(A) \tkzLabelPoints(A)
+    \end{tikzpicture}
+
+{
+    \begin{tikzpicture}[scale=1.0]
+        \tkzInit[xmin=-2,xmax=2,xstep=1,
+        ymin=-8,ymax=24,ystep=8]
+        \tkzGrid[] \tkzAxeXY
+        \tkzFct[domain =-1.5:2]{3.0-1.3125*x**5-2.5*x**3}
+        \tkzDefPointByFct(.5) \tkzGetPoint{A}\tkzDrawPoint(A)
+        \tkzLabelPoint[above right](A){$A_0$}
+        \tkzDefPointByFct(-1) \tkzGetPoint{A1}\tkzDrawPoint(A1)
+        \tkzLabelPoint[above right](A1){$A_1$}
+    \end{tikzpicture}
+    \tiny
+    \begin{tikzpicture}[scale=0.75]
+        \tkzInit[xmin=-2,xmax=2,xstep=1,
+        ymin=-8,ymax=24,ystep=8]
+        \tkzGrid[] \tkzAxeXY
+        \tkzFct[domain =-1.5:2]{3.0-1.3125*x**5-2.5*x**3}
+        \tkzDefPointByFct(.5) \tkzGetPoint{A}\tkzDrawPoint(A)
+        \tkzLabelPoint[above right](A){$A_0$}
+        \tkzDefPointByFct(-1) \tkzGetPoint{A1}\tkzDrawPoint(A1)
+        \tkzLabelPoint[above right](A1){$A_1$}
+    \end{tikzpicture}
+}
+
+\begin{tabular}{lcc}
+    \begin{minipage}{2in}
+    This is a table with two graphs in it.
+    \end{minipage}
+    &
+\begin{tikzpicture}[scale=1]
+    \tkzInit[xmin=-2,xmax=2,xstep=1,
+    ymin=-8,ymax=24,ystep=8]
+    \tkzGrid[] \tkzAxeXY
+    \tkzFct[domain =-1.5:2]{3.0-1.3125*x**5-2.5*x**3}
+    \tkzDefPointByFct(.5) \tkzGetPoint{A}\tkzDrawPoint(A)
+    \tkzLabelPoint[above right](A){$A_0$}
+    \tkzDefPointByFct(-1) \tkzGetPoint{A1}\tkzDrawPoint(A1)
+    \tkzLabelPoint[above right](A1){$A_1$}
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=1]
+    \tkzInit[xmin=-2,xmax=2,xstep=1,
+    ymin=-8,ymax=24,ystep=8]
+    \tkzGrid[] \tkzAxeXY
+    \tkzFct[domain =-1.5:2]{3.0-1.3125*x**5-2.5*x**3}
+    \tkzDefPointByFct(.5) \tkzGetPoint{A}\tkzDrawPoint(A)
+    \tkzLabelPoint[above right](A){$A_0$}
+    \tkzDefPointByFct(-1) \tkzGetPoint{A1}\tkzDrawPoint(A1)
+    \tkzLabelPoint[above right](A1){$A_1$}
+\end{tikzpicture}
+\\
+\end{tabular}

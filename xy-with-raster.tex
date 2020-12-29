@@ -1,0 +1,108 @@
+\newpage
+\section{rasters}
+\noindent
+\fbox{
+\begin{tcboxedraster}[
+        % raster options:
+        raster columns=3, 
+        raster equal height=rows, % none, rows, all
+        raster valign = top, % if the boxes do not have equal height
+        raster column skip = 1em,
+        raster row skip = 1em,
+        raster every box/.style={
+            size=small,
+            colframe=black,
+            colback=white,
+            colbacktitle=black,
+            valign=center,
+            halign=left,
+            title={plot},
+        },
+        raster column 1/.style={
+            size=small,
+            colframe=red!50,
+            colback=gray,
+            colbacktitle=red,
+            valign=center,
+            halign=left,
+            title={description},
+        }
+    ]
+    {
+        % outer box options:
+        colback=yellow!10,
+        fonttitle=\bfseries,
+        title=Boxed Raster
+    }
+    \begin{tcolorbox}[
+        raster multicolumn=3,
+        ]
+        This is a wide box.
+        
+        \vspace{1em}
+        And this is a second paragraph.
+    \end{tcolorbox}
+    \begin{tcolorbox}
+        This is a tall box.
+        
+        \vspace{1em}
+        And this is a second paragraph.
+    \end{tcolorbox}
+    \begin{tcolorbox}
+        \begin{tikzpicture}[scale=0.75]
+            \tkzInit[xmin=-2,xmax=2,xstep=1,
+            ymin=-8,ymax=24,ystep=8]
+            \tkzGrid[] \tkzAxeXY
+            \tkzFct[domain =-1.5:2]{3.0-1.3125*x**5-2.5*x**3}
+            \tkzDefPointByFct(.5) \tkzGetPoint{A}\tkzDrawPoint(A)
+            \tkzLabelPoint[above right](A){$A_0$}
+            \tkzDefPointByFct(-1) \tkzGetPoint{A1}\tkzDrawPoint(A1)
+            \tkzLabelPoint[above right](A1){$A_1$}
+        \end{tikzpicture}
+    \end{tcolorbox}
+    \begin{tcolorbox}
+        \tiny
+        \begin{tikzpicture}[scale=0.75]
+            \tkzInit[xmin=-2,xmax=2,xstep=1,
+            ymin=-8,ymax=24,ystep=8]
+            \tkzGrid[] \tkzAxeXY
+            \tkzFct[domain =-1.5:2]{3.0-1.3125*x**5-2.5*x**3}
+            \tkzDefPointByFct(.5) \tkzGetPoint{A}\tkzDrawPoint(A)
+            \tkzLabelPoint[above right](A){\tiny $A_0$}
+            \tkzDefPointByFct(-1) \tkzGetPoint{A1}\tkzDrawPoint(A1)
+            \tkzLabelPoint[below left](A1){\tiny $A_1$}
+        \end{tikzpicture}
+    \end{tcolorbox}
+    %
+    %
+    %
+    \begin{tcolorbox}
+        This is a table with two graphs in it.
+    \end{tcolorbox}
+    \begin{tcolorbox}
+        \begin{tikzpicture}[scale=0.5]
+            \tkzInit[xmin=-2,xmax=2,xstep=1,
+            ymin=-8,ymax=24,ystep=8]
+            \tkzGrid[] \tkzAxeXY
+            \tkzFct[domain =-1.5:2]{3.0-1.3125*x**5-2.5*x**3}
+            \tkzDefPointByFct(.5) \tkzGetPoint{A}\tkzDrawPoint(A)
+            \tkzLabelPoint[above right](A){$A_0$}
+            \tkzDefPointByFct(-1) \tkzGetPoint{A1}\tkzDrawPoint(A1)
+            \tkzLabelPoint[above right](A1){$A_1$}
+        \end{tikzpicture}
+    \end{tcolorbox}
+    \begin{tcolorbox}
+        \tiny
+        \begin{tikzpicture}[scale=0.5]
+            \tkzInit[xmin=-2,xmax=2,xstep=1,
+            ymin=-8,ymax=24,ystep=8]
+            \tkzGrid[] \tkzAxeXY
+            \tkzFct[domain =-1.5:2]{3.0-1.3125*x**5-2.5*x**3}
+            \tkzDefPointByFct(.5) \tkzGetPoint{A}\tkzDrawPoint(A)
+            \tkzLabelPoint[above right](A){\tiny $A_0$}
+            \tkzDefPointByFct(-1) \tkzGetPoint{A1}\tkzDrawPoint(A1)
+            \tkzLabelPoint[below left](A1){\tiny $A_1$}
+        \end{tikzpicture}
+    \end{tcolorbox}
+\end{tcboxedraster}
+}%fbox

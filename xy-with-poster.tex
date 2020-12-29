@@ -1,0 +1,87 @@
+\section{posters}
+\noindent
+\begin{tcbposter}[
+        coverage = {},
+        poster   = {
+            showframe=true,
+            columns=3, rows=2,
+            height=5in,
+            spacing=0.25em,
+            },
+        boxes = {
+            sharp corners,
+            % arc=3mm,
+            boxrule=0.75pt,
+            colback=white,
+            colframe=black,
+            % title style={left color=black,right color=cyan},
+            fonttitle=\bfseries\scshape,
+            }
+    ]
+    \posterbox{
+        name=myLeft, 
+        column=1, 
+        between=top and bottom, 
+    }{
+        Here is my description of \dots stuff.
+        \par\vspace{1em}
+        And then some more stuff in a different paragraph.
+    }
+
+
+    \posterbox{name=SW, column=2, row=2, rowspan=1,}{
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \tkzInit[xmin=-2,xmax=2,xstep=1,
+            ymin=-8,ymax=24,ystep=8]
+            \tkzGrid[] \tkzAxeXY
+            \tkzFct[domain =-1.5:2]{3.0-1.3125*x**5-2.5*x**3}
+            \tkzDefPointByFct(.5) \tkzGetPoint{A}\tkzDrawPoint(A)
+            \tkzLabelPoint[above right](A){\tiny $A_0$}
+            \tkzDefPointByFct(-1) \tkzGetPoint{A1}\tkzDrawPoint(A1)
+            \tkzLabelPoint[below left](A1){\tiny $A_1$}
+        \end{tikzpicture}
+    }
+    \posterbox{name=SE, column=3, row=2, rowspan=1, }{
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \tkzInit[xmin=-2,xmax=2,xstep=1,
+            ymin=-8,ymax=24,ystep=8]
+            \tkzGrid[] \tkzAxeXY
+            \tkzFct[domain =-1.5:2]{3.0-1.3125*x**5-2.5*x**3}
+            \tkzDefPointByFct(.5) \tkzGetPoint{A}\tkzDrawPoint(A)
+            \tkzLabelPoint[above right](A){\tiny $A_0$}
+            \tkzDefPointByFct(-1) \tkzGetPoint{A1}\tkzDrawPoint(A1)
+            \tkzLabelPoint[below left](A1){\tiny $A_1$}
+        \end{tikzpicture}
+    }
+
+
+    \posterbox{name=NW, column=2, row=1, rowspan=1, }{
+        \centering
+        \begin{tikzpicture}[scale=0.75]
+            \tkzInit[xmin=-2,xmax=2,xstep=1,
+            ymin=-8,ymax=24,ystep=8]
+            \tkzGrid[] \tkzAxeXY
+            \tkzFct[domain =-1.5:2]{3.0-1.3125*x**5-2.5*x**3}
+            \tkzDefPointByFct(.5) \tkzGetPoint{A}\tkzDrawPoint(A)
+            \tkzLabelPoint[above right](A){\tiny $A_0$}
+            \tkzDefPointByFct(-1) \tkzGetPoint{A1}\tkzDrawPoint(A1)
+            \tkzLabelPoint[below left](A1){\tiny $A_1$}
+        \end{tikzpicture}
+    }
+    \posterbox{name=NE, column=3, row=1, rowspan=1, }{
+        \centering
+        \begin{tikzpicture}[scale=0.75]
+            \tkzInit[xmin=-2,xmax=2,xstep=1,
+            ymin=-8,ymax=24,ystep=8]
+            \tkzGrid[] \tkzAxeXY
+            \tkzFct[domain =-1.5:2]{3.0-1.3125*x**5-2.5*x**3}
+            \tkzDefPointByFct(.5) \tkzGetPoint{A}\tkzDrawPoint(A)
+            \tkzLabelPoint[above right](A){\tiny $A_0$}
+            \tkzDefPointByFct(-1) \tkzGetPoint{A1}\tkzDrawPoint(A1)
+            \tkzLabelPoint[below left](A1){\tiny $A_1$}
+        \end{tikzpicture}
+    }
+
+\end{tcbposter}

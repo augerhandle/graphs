@@ -1,10 +1,14 @@
 % !TEX options = -shell-escape -synctex=1 -interaction=nonstopmode -file-line-error "%DOC%"
 
-\documentclass{article}
+\documentclass[11pt,letterpaper]{memoir}
+% memoir commands to define the text block geometry
+\setulmarginsandblock{1in}{*}{*}
+\setlrmarginsandblock{0.5in}{*}{*}
 
 \usepackage{etoolbox} % for \patchcmd
 
 \usepackage[english]{babel}
+
 \usepackage{tikz}
 \usetikzlibrary{babel}
 
@@ -15,20 +19,39 @@
 \usepackage{etoolbox}
 \usepackage{amsmath}
 
+\usepackage{tcolorbox}
+\tcbuselibrary{raster}  
+\tcbuselibrary{poster}  
+
+\input{defs}
+\includeonly{xy-with-poster}
 
 \begin{document}
+\checkandfixthelayout
+\pagestyle{empty}
 
-\section{Base}
-\input{base}
+\tikzset{
+    xaxe style/.style = {
+        arrows={-},
+        label={},
+    }, 
+    yaxe style/.style = {
+        arrows={-},
+        label={},
+    }, 
+}
 
-\section{number lines}
-\input{numberlines}
 
-\section{$x$-$y$ grids}
-\input{xy-grids}
+\include{base}
 
-\section{functions}
-\input{xy-functions}
+\include{numberlines}
+
+\include{xy-grids}
+
+\include{xy-functions}
+
+\include{xy-with-raster}
+\include{xy-with-poster}
 
  
 \end{document}

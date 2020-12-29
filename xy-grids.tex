@@ -1,3 +1,4 @@
+\section{$x$-$y$ grids}
 
 \begin{tikzpicture}
     \tkzInit[xmax=4, ymax=2]
@@ -10,6 +11,19 @@
     \tkzInit[xmax=4, xmin=-4, ymax=2]
     \tkzGrid[sub]
     \tkzAxeXY
+\end{tikzpicture}
+\par 
+
+\begin{tikzpicture}[scale=0.85]
+    \tkzInit[
+        xmax=8, xmin=-8, xstep=2,
+        ymax=8, ymin=-8, ystep=2,
+    ]
+    \tkzGrid[sub, subxstep=1, subystep=1]
+    \tkzDrawX[left space=1, right space=1, label={}]
+    \tkzLabelX
+    \tkzDrawY[down space=1, up space=1, label={}]
+    \tkzLabelY
 \end{tikzpicture}
 \par 
 
